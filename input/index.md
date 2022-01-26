@@ -1,4 +1,8 @@
-# Parsons CD web dev handbook
+---
+title: Parsons CD web dev handbook (temporary home)
+layout: tutorial.njk
+---
+
 This website will host web development tutorials written by CD tutors and core interaction faculty to answer common questions and introduce students to best practices.
 
 

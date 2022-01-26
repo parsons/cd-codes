@@ -1,0 +1,43 @@
+article>*{
+  max-width:700px;
+  margin:auto;
+  margin-bottom:20px;
+
+  font-family:"Source Serif Pro";
+  font-size: 18px;
+  line-height: 28px;
+}
+
+code, pre code{
+  font-family:"Source Code Pro";
+}
+
+pre code{
+  font-size: 16px;
+  line-height: 22px;
+}
+
+ul,ol{
+  padding-left:40px;
+}
+
+
+header h1{
+  /* font-size: 40px; */
+  font-weight: 600;
+  text-align:center;
+  margin-top:100px;
+}
+
+h1,h2{
+  font-family: "Space Grotesk";
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-top: 40px;
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,300&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk&display=swap');

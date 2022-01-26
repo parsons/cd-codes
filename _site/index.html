@@ -3,11 +3,177 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" >
     <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link rel="stylesheet" href="css/clearstyle.css">
-    <link rel="stylesheet" href="css/index.css">
+    <title>Parsons CD web dev handbook (temporary home)</title>
+    <link rel="stylesheet" href="../../css/clearstyle.css">
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/tutorial.css">
   </head>
   <body>
 
+    <article >
+      <header>
+        <h1>Parsons CD web dev handbook (temporary home)</h1>
+      </header>
+
+      <p>This website will host web development tutorials written by CD tutors and core interaction faculty to answer common questions and introduce students to best practices.</p>
+<h2>Feature goals:</h2>
+<ul>
+<li>[ ] General pages with best practices and resources</li>
+<li>[ ] Technical tutorials geared towards achieving specific effects that students often ask about
+<ul>
+<li>In each tutorial, include a set of tags for <em>“things you need to know in order to follow along“</em> and <em>“functions that will be covered”</em>, ideally linking to other CD tutorials</li>
+</ul>
+</li>
+<li>[ ] Collection of web development and UX readings</li>
+<li>[ ] CD tutor explanation and schedules/links (unlinkable and very hard to find in the <a href="https://cdparsons.glideapp.io/">CD app</a>)</li>
+<li>[ ] Fun home page</li>
+</ul>
+<h2>Possible general pages:</h2>
+<ul>
+<li>[ ] General best practices
+<ul>
+<li>Code indentation and formatting</li>
+<li>HTML semantics</li>
+<li>Breakpoints</li>
+<li>Proper image sizing</li>
+</ul>
+</li>
+<li>[ ] How to figure out how to do something</li>
+<li>[ ] Index of good learning resources / code encyclopedias
+<ul>
+<li>MDN</li>
+<li>CanIUse</li>
+</ul>
+</li>
+<li>[ ] Debugging
+<ul>
+<li>Introduction to the inspect tool and web console in browsers</li>
+<li><em>Note: this is a basic skill that I’ve noticed many students lack</em></li>
+</ul>
+</li>
+<li>[ ] CSS is more powerful than you think
+<ul>
+<li>Introduction to CSS variables and advanced selectors</li>
+</ul>
+</li>
+<li>[ ] “Should I use a library?”
+<ul>
+<li>A guide for how to decide when to build something from scratch or use a library, maybe an index of common applications that are way simpler through a library.</li>
+</ul>
+</li>
+<li>[ ] When and how to use code you find online
+<ul>
+<li>Explains why it’s usually bad to just copy code from places
+<ul>
+<li>a detriment to learning, defeats the whole point of the assignments</li>
+<li>possibly plagiaristic</li>
+<li>introduces dependencies to your code</li>
+<li>may break things because you don’t understand it</li>
+</ul>
+</li>
+<li>Explains cases where it’s okay
+<ul>
+<li>Using a <em>library</em> to do something that would otherwise be really complicated (link to libraries page)</li>
+<li>General open source culture</li>
+</ul>
+</li>
+<li>Alternatives:
+<ul>
+<li>Study the code of the site or tutorial that does what you want and try to figure it out, using the inspect tool if necessary</li>
+<li>Ask for assistance from tutors and instructor</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[ ] Useful desktop software + choosing a code editor</li>
+<li>[ ] Getting a website live with Github pages</li>
+<li>[ ] Version control is your best friend
+<ul>
+<li>“Or how I fell in love with git branching”</li>
+</ul>
+</li>
+<li>[ ] Advanced web development technology
+<ul>
+<li>Refers curious students to different types of development environments, explains when they’re useful to learn (and when not).
+<ul>
+<li>General Node/NPM</li>
+<li>The JAMStack (e.g. Eleventy, Netlify) for static site generation</li>
+<li>Angular or React for UX/SPAs</li>
+<li>Powerful and common libraries like D3.js</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Possible tutorials:</h2>
+<ul>
+<li>[ ] Drag and drop
+<ul>
+<li>Basic implementation using <code>onmousedown/move/up</code> (not the actual drag API, which is terrible)</li>
+<li>Snapping, at which point a library will probably be advisable</li>
+</ul>
+</li>
+<li>[ ] Audio effects</li>
+<li>[ ] Make page respond to screen size or device (media queries)</li>
+<li>[ ] Using APIs
+<ul>
+<li>Maybe include a list of good APIs</li>
+</ul>
+</li>
+<li>[ ] Mouse events (make things happen when you click or hover)
+<ul>
+<li>Explain event listeners, and link to “Dynamically change page elements” for more detail on what can be done with them.</li>
+</ul>
+</li>
+<li>[ ] Infinite carousels
+<ul>
+<li>will probably require a library</li>
+</ul>
+</li>
+<li>[ ] Dynamically change/add page elements
+<ul>
+<li>Basic JavaScript DOM manipulation using <code>document.querySelector</code>, <code>document.createChild</code>,<code>document.style</code>,<code>document.innerText</code>, etc.</li>
+</ul>
+</li>
+<li>[ ] Clear default styles on input elements</li>
+<li>[ ] How to set up a local server
+<ul>
+<li>Command line and possibly VSCode app</li>
+</ul>
+</li>
+</ul>
+<h2>Best practices for tutorials:</h2>
+<ul>
+<li>Use titles that are explanatory for people who don’t know the right terminology</li>
+<li>List the things you need to know to understand the tutorial (hopefully using a built-in front-matter function)</li>
+<li>Rely on vanilla JS and CSS wherever possible. Encourage students to think through problems on their own.</li>
+<li>Describe code using non-technical language and make use of evocative metaphors to explain what things do.</li>
+<li>Be sure to follow good formatting conventions with your example code.</li>
+<li>Leave comments in example code to explain what each line does.</li>
+</ul>
+<h2>How we envision the use of this site</h2>
+<ul>
+<li>To be shared with students at the beginning of the semester as a general resource</li>
+<li>Instructors and tutors can refer students to the tutorials for common problems and mistakes
+<ul>
+<li>e.g. <em>“This guide shows you how to do this — read through it and let me know if you run into trouble.”</em></li>
+<li>These tutorials are supposed to be a kind of “Wirecutter” for navigating code as a designer and introducing the uninitiated to the right resources without the rest of the web's biases, ads, jargon, bad code, etc</li>
+</ul>
+</li>
+<li>The site can also house general resources and reflect the core values of the program.</li>
+</ul>
+
+    </article>
+
+    <script src="../../js/highlight.min.js"></script>
+    <script type="text/javascript">
+      // hljs.config({ cssSelector: 'code' });
+      hljs.highlightAll();
+
+      document.querySelectorAll('article>*>code').forEach((item, i) => {
+        hljs.highlightElement(item);
+      });
+
+    </script>
   </body>
 </html>

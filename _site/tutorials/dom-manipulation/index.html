@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;" charset="utf-8" >
+    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1">
+    <title>Dynamically change/add page elements</title>
+    <link rel="stylesheet" href="../../css/clearstyle.css">
+    <link rel="stylesheet" href="../../css/default.css">
+    <link rel="stylesheet" href="../../css/tutorial.css">
+  </head>
+  <body>
+
+    <article >
+      <header>
+        <h1>Dynamically change/add page elements</h1>
+      </header>
+
+      <p>This tutorial will go over the basics of how to change the content and styling of page elements in your documents, using JavaScript (JS).</p>
+<p>Recommended before you begin:</p>
+<ul>
+<li>Basic HTML</li>
+<li>Basic CSS</li>
+<li>Basic JavaScript syntax</li>
+<li>JavaScript functions</li>
+</ul>
+<p>Functions covered:</p>
+<ul>
+<li>document.querySelector()</li>
+<li>document.querySelectorAll()</li>
+<li>element.forEach()</li>
+<li>element.style</li>
+<li>element.classList and related</li>
+<li>element.innerText</li>
+<li>document.createChild() and related</li>
+</ul>
+<h2>How to select an element in JavaScript</h2>
+<p>In JS, you can use a <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables">variable</a> as a reference to an element in your HTML. There are several ways to do this, but the most general purpose is <code>document.querySelector</code>. This function uses CSS selectors as parameters to find an element.</p>
+<pre><code>//target an &lt;h1&gt; element
+const title_element = document.querySelector(&quot;h1&quot;);
+
+// target an element with id=&quot;close-button&quot;
+const close_button = document.querySelector(&quot;#close-button&quot;);
+</code></pre>
+<p>Once you have this variable created, you can use JS to change things about the element. See the following sections.</p>
+<p><em>(for reference: the thing now stored in this variable is called a “node”, and it is structured like a javascript object)</em></p>
+<h2>Change the text content of an element</h2>
+<p>You can change the text content by adding <code>.innerText =</code>  after your variable and inputting the new text in quotations.</p>
+<pre><code>title_element.innerText = &quot;Hello world!&quot;
+</code></pre>
+<h2>Change the CSS styles on an element</h2>
+<p>The CSS styles of an element through the <code>.style</code> key. From there you can access different styles by their CSS property name, except in camel case instead of hyphens.</p>
+<pre><code>// Sets text color (the &quot;color:&quot; property in CSS)
+title_element.style.color = &quot;blue&quot;;
+
+// Sets top margin (&quot;margin-top&quot; property in CSS)
+title_element.style.marginTop=&quot;100px&quot;;
+</code></pre>
+<p><em>For reference: the changes will be added to the style attribute in the HTML, e.g.</em> <code>&lt;h1 style=&quot;color:blue;&quot;&gt;hello world&lt;/h1&gt;</code></p>
+<h2>Add or remove classes from elements</h2>
+<p>You can access an element’s CSS classes through the <code>.classList</code> key, and add or remove them.</p>
+<pre><code>// adds class &quot;big&quot; to the element
+title_element.classList.add(&quot;big&quot;)
+
+// removes class &quot;hidden&quot; from element
+title_element.classList.remove(&quot;ugly&quot;)
+
+// handy &quot;toggle&quot; that adds class if it's off, and removes it if it's on
+title_element.classList.toggle(&quot;visible&quot;)
+</code></pre>
+<p>This is usually preferable to changing the styles directly, because you can just do all your CSS in a centralized place and have more control over it through classes.</p>
+<h2>Select and change multiple elements</h2>
+<p>In order to select multiple elements, you’ll need to use a slightly different JavaScript function called <code>document.querySelectorAll</code>.</p>
+<pre><code>const elements=document.querySelectorAll(&quot;.el&quot;)
+</code></pre>
+<p>This will find all the elements in your document that have the CSS selector you entered, and save them in a list which is similar to an array.</p>
+<p>Now how do you do stuff in JS with these elements? One easy way to change all of them is the <code>forEach</code> function, which is a type of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">looping function</a>.</p>
+<pre><code>elements.forEach((item)=&gt;{
+  item.style.color=&quot;Blue&quot;;
+})
+</code></pre>
+<p>The syntax may look intimidating, but what it does is simple enough. In the example above, the code instructs the computer: <strong>&quot;For each item in this collection of elements, change its color to blue”</strong>.</p>
+<p>It doesn’t matter what you call “item” in the example above. It’s just a placeholder name for each single item in your collection of elements, so you can tell the computer what you want it to change.</p>
+<h2>Create a new element and add it to the document</h2>
+<p>Using the techniques we’ve learned above and some new functions, we can generate elements in JavaScript and add them to the page on the fly.</p>
+<p>You’ll just need two new functions: <code>document.createElement</code>, which generates a new element in JavaScript but doesn’t actually add it anywhere, and <code>element.appendChild</code>, which adds it to a document, within an element of your choice.</p>
+<pre><code>//lets say you have this existing element in the dom
+const container=document.querySelector(&quot;div&quot;);
+
+//now you want to add a paragraph to it. Here's what you do:
+
+// 1. create the element.
+// enter a type of HTML element in quotations, (e.g. p, h1, h2, h3, div, li)
+const newParagraph=document.createElement(&quot;p&quot;);
+
+// 2. you can adjust things about the element before you add it to the document.
+newParagraph.style.color=&quot;Green&quot;;
+newParagraph.innerText=&quot;I am a green paragraph tag&quot;;
+
+// 3. finally, select the container and add the new paragraph to it using appendChild
+container.appendChild(newParagraph);
+</code></pre>
+
+    </article>
+
+    <script src="../../js/highlight.min.js"></script>
+    <script type="text/javascript">
+      // hljs.config({ cssSelector: 'code' });
+      hljs.highlightAll();
+
+      document.querySelectorAll('article>*>code').forEach((item, i) => {
+        hljs.highlightElement(item);
+      });
+
+    </script>
+  </body>
+</html>
