@@ -80,7 +80,6 @@ This website will host web development tutorials written by CD tutors and core i
 - Leave comments in example code to explain what each line does.
 
 
-
 ## How we envision the use of this site
 - To be shared with students at the beginning of the semester as a general resource
 - Instructors and tutors can refer students to the tutorials for common problems and mistakes
